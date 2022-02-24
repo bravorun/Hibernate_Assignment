@@ -51,7 +51,10 @@ public class UserDaoImpl implements UserDao{
 			tx.rollback();
 		}
 		session.close();
+		if(user.size()>0)
 		return Optional.ofNullable(user.get(0));
+		else 
+			return Optional.ofNullable(null);
 	}
 
 }
